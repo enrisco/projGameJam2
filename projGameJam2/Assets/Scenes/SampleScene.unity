@@ -34173,6 +34173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 758459634}
   MessageBoxController: {fileID: 2053473925}
+  Distance: 0.3
 --- !u!1 &1887252357
 GameObject:
   m_ObjectHideFlags: 0
