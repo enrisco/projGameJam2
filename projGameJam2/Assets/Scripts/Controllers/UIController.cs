@@ -41,8 +41,5 @@ public class UIController : MonoBehaviour
     {
         soundVolumeSlider.value = soundVolume;
         musicVolumeSlider.value = musicVolume;
-
-        Debug.Log(soundVolumeSlider.value);
-        Debug.Log(musicVolumeSlider.value);
     }
 }
