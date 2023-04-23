@@ -1337,6 +1337,7 @@ GameObject:
   - component: {fileID: 940967651}
   - component: {fileID: 940967653}
   - component: {fileID: 940967652}
+  - component: {fileID: 940967654}
   m_Layer: 0
   m_Name: marlene
   m_TagString: Untagged
@@ -1431,6 +1432,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &940967654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940967650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea90debb5ca1ffa4fbf258b30f10bd48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 758459634}
+  MessageBoxController: {fileID: 2053473925}
+  Distance: 0.3
 --- !u!1 &1006260257
 GameObject:
   m_ObjectHideFlags: 0
