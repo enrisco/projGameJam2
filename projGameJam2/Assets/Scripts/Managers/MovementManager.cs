@@ -8,28 +8,30 @@ using UnityEngine;
 class MovementManager
 {
 
-    public Transform Transform;
-    public RectTransform RectTransform;
-    public Vector3 TargetPos;
-    public Vector3 InitialPos;
+    Transform Transform;
+    RectTransform RectTransform;
+    Rigidbody2D Rigidbody2D;
+    Vector3 TargetPos;
+    Vector3 InitialPos;
 
     public float Speed;
     public bool IsParallax;
 
-    public MovementManager(Transform transform, RectTransform rectTransform, Vector3 targetPos, Vector3 initialPos, float speed)
+    public MovementManager(Transform transform, RectTransform rectTransform, Vector3 targetPos, Vector3 initialPos, float speed, Rigidbody2D rigidbody2D)
     { 
         Transform = transform;
         RectTransform = rectTransform;
         TargetPos = targetPos; 
         InitialPos = initialPos;
         Speed = speed;
+        Rigidbody2D = rigidbody2D;
     }
 
     public void PlayerMove(Vector3 pos)
     {
         Vector3 position = Transform.position + pos * Speed * Time.deltaTime;
 
-        Transform.position = position;
+        Rigidbody2D.MovePosition(position);
     }
 
     public void Move(bool isRect)

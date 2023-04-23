@@ -14,6 +14,7 @@ class MessageBoxController : MonoBehaviour
     [SerializeField] GameObject txtMessage;
 
     [SerializeField] ChooseController ChooseController;
+    [SerializeField] PlayerController PlayersController;
 
     [SerializeField] float MoveSpeed;
     [SerializeField] float LetterSpeed;
@@ -32,7 +33,8 @@ class MessageBoxController : MonoBehaviour
             RectTransform, 
             Vector3.zero, 
             RectTransform.position,
-            MoveSpeed
+            MoveSpeed,
+            null
         );
     }
 
@@ -47,6 +49,8 @@ class MessageBoxController : MonoBehaviour
 
     public void SetMessages(string name, string[] message, int choiceIndex, bool startAnim, bool endAnim)
     {
+
+        MovementManager.ChangeFinalPosition(new Vector2(0, 0));
         canMove = true;
         TextManager.SetText(name, txtName);
         StartCoroutine(SetMessage(message, txtMessage, choiceIndex, startAnim, endAnim));
@@ -76,6 +80,7 @@ class MessageBoxController : MonoBehaviour
         { 
             MovementManager.ChangeFinalPosition(new Vector2(0, -165));
             canMove = true;
+            PlayersController.CanMove = true;
         }
     }
 
