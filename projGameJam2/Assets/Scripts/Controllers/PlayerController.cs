@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float speed;
 
+    SoundController soundController;
+
     MovementManager MovementManager;
     Animator Animator;
     SpriteRenderer Renderer;
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
         Animator = GetComponent<Animator> ();
         Renderer = GetComponent<SpriteRenderer> ();
+        soundController = GetComponent<SoundController> ();
     }
 
     // Update is called once per frame
@@ -59,8 +62,18 @@ public class PlayerController : MonoBehaviour
 
                 Animator.Play("fadaWalkLeft");
             }
-            else if (v > 0) Animator.Play("fadaWalkUp");
-            else if (v < 0) Animator.Play("fadaWalkDown");
+            else if (v > 0)
+            {
+                Animator.Play("fadaWalkUp");
+            }
+            else if (v < 0)
+            {
+                Animator.Play("fadaWalkDown");           
+            }
+            
+            if(h != 0 || v!= 0) soundController.isMoving = true;
+
+            if(h == 0 && v == 0) soundController.isMoving = false;
         }
     }
 }
